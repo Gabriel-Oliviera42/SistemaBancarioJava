@@ -1,7 +1,7 @@
 package com.unifenas.banco;
 
 public class ContaBancaria {
-    private double saldo;
+    private double saldo = 0.0;
 
     public ContaBancaria(double saldoInicial) {
         if (saldoInicial < 0) {
