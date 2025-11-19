@@ -5,7 +5,8 @@ public class ContaBancaria {
 
     public ContaBancaria(double saldoInicial) {
         if (saldoInicial < 0) {
-            throw new IllegalArgumentException("Saldo inicial não pode ser negativo.");
+            // Hotfix: mudei a mensagem da exceção para maior clareza
+            throw new IllegalArgumentException("Saldo inicial deve ser maior ou igual a zero.");
         }
         this.saldo = saldoInicial;
     }
