@@ -42,4 +42,25 @@ public class ContaBancariaTest {
         assertEquals(100.0, conta.getSaldo()); // Saldo não deve mudar
     }
 
+    @Test
+    void deveDepositarComSucesso() { // 6º Teste
+        ContaBancaria conta = new ContaBancaria(100.0);
+        assertTrue(conta.depositar(50.0));
+        assertEquals(150.0, conta.getSaldo());
+    }
+
+    @Test
+    void deveDepositarGrandesValores() { // 7º Teste
+        ContaBancaria conta = new ContaBancaria(0.0);
+        assertTrue(conta.depositar(999999.99));
+        assertEquals(999999.99, conta.getSaldo());
+    }
+
+    @Test
+    void naoDeveDepositarValorNegativoOuZero() { // 8º Teste
+        ContaBancaria conta = new ContaBancaria(100.0);
+        assertFalse(conta.depositar(0.0));
+        assertFalse(conta.depositar(-50.0));
+        assertEquals(100.0, conta.getSaldo()); // Saldo não deve mudar
+    }
 }

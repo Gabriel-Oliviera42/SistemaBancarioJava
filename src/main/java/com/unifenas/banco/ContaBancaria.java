@@ -22,4 +22,11 @@ public class ContaBancaria {
         return true;
     }
 
+    public boolean depositar(double valor) {
+        if (valor <= 0) {
+            return false;
+        }
+        this.saldo += valor;
+        return true;
+    }
 }
