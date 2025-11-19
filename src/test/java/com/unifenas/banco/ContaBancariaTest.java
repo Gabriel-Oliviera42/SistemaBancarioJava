@@ -13,11 +13,11 @@ public class ContaBancariaTest {
 
     @Test
     void deveLancarExcecaoSeSaldoInicialNegativo() {
-        // Verifica o tratamento de erros [cite: 11]
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             new ContaBancaria(-50.0);
         });
-        assertEquals("Saldo inicial não pode ser negativo.", exception.getMessage());
+        // ATUALIZAÇÃO DO HOTFIX
+        assertEquals("Saldo inicial deve ser maior ou igual a zero.", exception.getMessage());
     }
 
     @Test
